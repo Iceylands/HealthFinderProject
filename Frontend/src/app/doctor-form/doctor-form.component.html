@@ -1,0 +1,68 @@
+<app-nav-container></app-nav-container>
+<div class="content" role="main">
+  <div class="bgimg">
+    <div class="formBackground">
+      <div class="rightSideForm">
+        <h1>Fill the form</h1>
+        <ul class="oval">
+          <li>Fill the form</li>
+          <li>You can leave some options blank</li>
+          <li>We will match you to a dcotor</li>
+        </ul>
+      </div>
+
+      <div class="leftSideForm">
+        <br />
+        <br />
+
+        <form [formGroup]="myForm">
+          <!-- <p class="topStyle">Value: {{ myForm.value | json }}</p>
+          <br> -->
+          <hr />
+          <div>
+            <mat-form-field appearance="fill" >
+              <mat-label>Looking for</mat-label>
+              <mat-select  (selectionChange)="changeClient($event.value)">
+                <mat-option *ngFor="let Doctor of lookingForOption" [value]="Doctor.value">
+                  {{ Doctor.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br />
+            <mat-form-field appearance="fill">
+              <mat-label>State</mat-label>
+              <mat-select>
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br />
+            <mat-form-field appearance="fill">
+              <mat-label>Language</mat-label>
+              <mat-select>
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let language of languages" [value]="language">{{language.viewValue}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br />
+            <div>
+              <label>Have insurance? </label>
+              <mat-radio-group [formControl]="inuranceSelected">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <br />
+          </div>
+          <br />
+          <a class="loginButton" target="" rel="noopener" href="/searching">
+            <span>Search</span>
+          </a>
+        </form>
+        <br />
+        <br />
+        <br />
+      </div>
+    </div>
+  </div>
+</div>
