@@ -4,22 +4,27 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 using System.Web;
-using System.Web.Mvc;
+using System.Web.Http;
+//using System.Web.Mvc;
 using HealthFinderAPI.Models;
 
 namespace HealthFinderAPI.Controllers
 {
-    public class DoctorsController : Controller
+    [System.Web.Http.Route("api/[controller]")]
+    public class DoctorsController : ApiController
     {
         private HealthFinderEntities db = new HealthFinderEntities();
 
         // GET: Doctors
-        public ActionResult Index()
+        [HttpGet]
+        public async Task<IEnumerable<Doctor>> Get()
         {
-            return View(db.Doctors.ToList());
+            return await db.Doctors.ToListAsync();
         }
 
+        /*
         // GET: Doctors/Details/5
         public ActionResult Details(int? id)
         {
@@ -122,6 +127,6 @@ namespace HealthFinderAPI.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
     }
 }
