@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ccheu\\OneDrive\\Desktop\\HealthFinder\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj": {}
+    "C:\\Users\\rey11\\HealthFinderProject\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ccheu\\OneDrive\\Desktop\\HealthFinder\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj": {
+    "C:\\Users\\rey11\\HealthFinderProject\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ccheu\\OneDrive\\Desktop\\HealthFinder\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj",
+        "projectUniqueName": "C:\\Users\\rey11\\HealthFinderProject\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj",
         "projectName": "HealthFinder",
-        "projectPath": "C:\\Users\\ccheu\\OneDrive\\Desktop\\HealthFinder\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj",
-        "packagesPath": "C:\\Users\\ccheu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ccheu\\OneDrive\\Desktop\\HealthFinder\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\obj\\",
+        "projectPath": "C:\\Users\\rey11\\HealthFinderProject\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj",
+        "packagesPath": "C:\\Users\\rey11\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\rey11\\HealthFinderProject\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ccheu\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\rey11\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -40,7 +44,15 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "IBM.Data.DB2.Core": {
+              "target": "Package",
+              "version": "[3.1.0.600, )"
+            },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[6.0.7, )"
             },
@@ -77,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

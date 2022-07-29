@@ -1,4 +1,5 @@
-﻿using HealthFinder.Models;
+﻿using HealthFinder.Data;
+using HealthFinder.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -74,5 +75,18 @@ namespace HealthFinder.Controllers
 
             return NoContent();
         }
+
+        //Create Results
+        /*[HttpGet("{search}")]
+        //[HttpGet]
+        public async JsonResult Search(string search)
+        {
+            var result = _docDB.Doctors.Where(s => s.Specialty.Contains(search) || s.Specialty.Contains("General Practitioner"));
+
+            if (result == null)
+                return new JsonResult(NotFound());
+            return new JsonResult(Ok(result));
+        }*/
+        
     }
 }
