@@ -1,0 +1,83 @@
+/* body,
+html {
+  height: 100%;
+  margin: 0;
+}
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+.content {
+    display: flex;
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    margin: 0px auto 32px;
+    background-image: url("https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size: 100% 100%;
+    flex-direction: column;
+    align-items: center;
+    background-position: center;
+    position: relative;
+  }
+  .bgimg {
+    background-image: url("https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    height: 100vh;
+    width: 100%;
+    margin-top: 50px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-size: 25px;
+  }
+  
+  .formBackground {
+    width: 70%;
+    min-height: 200px;
+    padding: 100px;
+    margin: 5em auto auto;
+    background-color: #f297a0;
+    border-radius: 0.5em;
+    box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.02);
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: row;
+  }
+  
+  .leftSideForm {
+    height: 100%;
+    background-color: #f297a0;
+    color: white;
+  }
+  
+  .rightSideForm {
+    position: inherit;
+    height: 100%;
+  }
+  .topStyle {
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  
+  .loginButton {
+    all: unset;
+    border-radius: 50px;
+    background-color: #3d369f;
+    color: #fff;
+    height: 20px;
+    width: 200px;
+    margin: 16px 8px 16px;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+    line-height: 24px;
+  }
+  

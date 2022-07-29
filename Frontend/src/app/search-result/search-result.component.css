@@ -1,0 +1,15 @@
+.content {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    margin:auto ;
+    padding: 100px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .second_content{
+    display: flex;
+    padding-right: 100px;
+    padding-left: 100px;
+    flex-direction: column;
+  }
