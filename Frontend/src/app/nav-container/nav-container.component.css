@@ -74,16 +74,16 @@ li a:hover:not(.active) {
   color: #fff;
 }
 
-a:visited {
-  color: #e6ebf1;
-}
+
 
 a,
 a:hover {
   color: #1976d2;
   text-decoration: none;
 }
-
+a{
+  display: flex;
+}
 a:hover {
   color: #125699;
 }

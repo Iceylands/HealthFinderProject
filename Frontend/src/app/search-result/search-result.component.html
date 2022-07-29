@@ -1,2 +1,10 @@
 <app-nav-container></app-nav-container>
-<p>search-result works!</p>
+<!-- <h2 style="margin-top: 100px;margin-bottom: 0px; padding-left: 100px;">Our recoomendation</h2> -->
+<div class="content">
+
+    <app-doctors-card *ngFor="let doctors of doctors" [doctor]="doctors"></app-doctors-card>
+</div>
+<div class="second_content">
+
+    <app-doctors-list></app-doctors-list>
+</div>

@@ -20,7 +20,10 @@ import {MatChipsModule} from '@angular/material/chips'
 import { MatOptionModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import { FindingDoctorsComponent } from './finding-doctors/finding-doctors.component';
-import { SearchResultComponent } from './search-result/search-result.component'
+import { SearchResultComponent } from './search-result/search-result.component';
+import { DoctorsCardComponent } from './doctors-card/doctors-card.component'
+import {MatIconModule} from '@angular/material/icon';
+import { DoctorsListComponent } from './doctors-list/doctors-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +34,9 @@ import { SearchResultComponent } from './search-result/search-result.component'
     ContactComponent,
     NavContainerComponent,
     FindingDoctorsComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    DoctorsCardComponent,
+    DoctorsListComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,8 @@ import { SearchResultComponent } from './search-result/search-result.component'
     MatCheckboxModule,
     MatChipsModule,
     MatOptionModule,
-    MatRadioModule
+    MatRadioModule,
+    MatIconModule
   ],
   providers: [],
 
