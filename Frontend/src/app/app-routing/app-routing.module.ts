@@ -8,6 +8,7 @@ import { AboutUsComponent } from '../about-us/about-us.component';
 import { ContactComponent } from '../contact/contact.component';
 import { FindingDoctorsComponent } from '../finding-doctors/finding-doctors.component';
 import { SearchResultComponent } from '../search-result/search-result.component';
+import { DoctorsDetailsComponent } from '../doctors-details/doctors-details.component';
 const routes: Routes = [
   // be default we show Todo list component
   { path: '', component: HomePageComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'searching', component: FindingDoctorsComponent },
   { path: 'result', component: SearchResultComponent },
+  { path: 'doctor/:id', component: DoctorsDetailsComponent },
 ];
 
 

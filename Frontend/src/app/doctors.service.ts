@@ -34,6 +34,7 @@ export class DoctorsService {
 
   result!: string;
   doctorsUrl: string = 'https://localhost:7127/api/Doctor';
+  doctorsUrlDetails: string = 'https://localhost:7127/api/Doctor/';
   constructor(private http: HttpClient) { }
 
   private handleError(error: HttpErrorResponse) {
@@ -72,18 +73,18 @@ export class DoctorsService {
 
 
   ]
+  setDoctors(id:any){
+    this.doctorsUrlDetails = "https://localhost:7127/api/Doctor/"+id+'/?format=json'
+  }
   getDoctors(): Observable<Doctors[]> {
     console.log("Response message", this.http.get<Doctors[]>(this.doctorsUrl, httpOptions));
     return this.http.get<Doctors[]>(this.doctorsUrl, httpOptions).pipe(retry(1), catchError(this.handleError))
   }
 
-  // getDoctors(): any {
-  //   const doctorsObservableTest = new Observable(observer => {
-  //     setTimeout(() => {
-  //       observer.next(this.doctors);
-  //     }, 10);
-  //   });
-  //   return doctorsObservableTest;
-  // }
+  getDoctorsDetails(id: any): Observable<Doctors> {
+    this.setDoctors(id)
+    console.log("Test",this.http.get<Doctors>(this.doctorsUrlDetails, httpOptions));
+    return this.http.get<Doctors>(this.doctorsUrlDetails, httpOptions)
+  }
 
 }

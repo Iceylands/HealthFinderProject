@@ -1,0 +1,24 @@
+<app-nav-container></app-nav-container>
+
+<section *ngIf="doctor">
+  <div class="doc-card">
+    <div class="info">
+      <div class="title">{{ doctor.name }}</div>
+      <div class="doctor">{{ doctor.specialty }}</div>
+      <div class="doc-info">{{ doctor.specialty }}</div>
+
+    </div>
+  </div>
+  <div class="button-div">
+    <button (click)="goBack()" class="button">GO BACK</button>
+  </div>
+</section>
+
+<section *ngIf="!doctor">
+  <div class="doc-card">
+    <div class="info">NO ARTISTE FOUND</div>
+  </div>
+  <div class="button-div">
+    <button (click)="goBack()" class="button">GO BACK</button>
+  </div>
+</section>
