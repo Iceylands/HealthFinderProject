@@ -24,6 +24,9 @@ import { SearchResultComponent } from './search-result/search-result.component';
 import { DoctorsCardComponent } from './doctors-card/doctors-card.component'
 import {MatIconModule} from '@angular/material/icon';
 import { DoctorsListComponent } from './doctors-list/doctors-list.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +55,8 @@ import { DoctorsListComponent } from './doctors-list/doctors-list.component';
     MatChipsModule,
     MatOptionModule,
     MatRadioModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
 

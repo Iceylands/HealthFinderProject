@@ -2228,25 +2228,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\rey11\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\Salam\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rey11\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj",
+      "projectUniqueName": "C:\\Users\\Salam\\source\\repos\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj",
       "projectName": "HealthFinder",
-      "projectPath": "C:\\Users\\rey11\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj",
-      "packagesPath": "C:\\Users\\rey11\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rey11\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\obj\\",
+      "projectPath": "C:\\Users\\Salam\\source\\repos\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\HealthFinder.csproj",
+      "packagesPath": "C:\\Users\\Salam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Salam\\source\\repos\\HealthFinderProject\\Backend\\HealthFinder\\HealthFinder\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-      ],
       "configFilePaths": [
-        "C:\\Users\\rey11\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\Salam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
