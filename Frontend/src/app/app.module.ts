@@ -21,10 +21,9 @@ import { MatOptionModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import { FindingDoctorsComponent } from './finding-doctors/finding-doctors.component';
 import { SearchResultComponent } from './search-result/search-result.component';
-import { DoctorsCardComponent } from './doctors-card/doctors-card.component'
 import {MatIconModule} from '@angular/material/icon';
-import { DoctorsListComponent } from './doctors-list/doctors-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DoctorsDetailsComponent } from './doctors-details/doctors-details.component';
 
 
 @NgModule({
@@ -38,8 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     NavContainerComponent,
     FindingDoctorsComponent,
     SearchResultComponent,
-    DoctorsCardComponent,
-    DoctorsListComponent,
+    DoctorsDetailsComponent,
   ],
   imports: [
     BrowserModule,

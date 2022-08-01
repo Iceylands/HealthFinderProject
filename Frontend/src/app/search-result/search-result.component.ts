@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Doctors } from '../models/Dotctors';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DoctorsService } from '../doctors.service';
@@ -10,7 +10,7 @@ import { DoctorsService } from '../doctors.service';
 })
 export class SearchResultComponent implements OnInit {
   doctors!: Doctors[];
-  constructor(private doctorsService:DoctorsService) { }
+  constructor(private doctorsService:DoctorsService, private router:Router) { }
 
   ngOnInit(): void {
     const doctorsObservable = this.doctorsService.getDoctors();
@@ -18,6 +18,10 @@ export class SearchResultComponent implements OnInit {
       this.doctors = doctorsData;
       console.log(this.doctors)
     })
+  }
+  gotoDoctor(id:number):void{
+    console.log(id)
+    this.router.navigate(['/doctor', id])
   }
 
 }

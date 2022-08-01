@@ -1,0 +1,46 @@
+section {
+  margin: auto;
+  max-width: 700px;
+}
+
+.doc-card {
+  width: 600px;
+  height: 600px;
+  margin: 5em auto;
+  padding: 2em;
+  background-color: #fafafa;
+  border-radius: 0.5em;
+  box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.02);
+}
+
+.title {
+  font-size: 1.4em;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.doctor {
+  color: #cfcfcf;
+  font-size: 1.2em;
+  letter-spacing: 0.08em;
+  font-family: "Reem Kufi", sans-serif;
+}
+
+.button {
+  display: block;
+  max-width: 300px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: #3d369f; /* Green */
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+}
