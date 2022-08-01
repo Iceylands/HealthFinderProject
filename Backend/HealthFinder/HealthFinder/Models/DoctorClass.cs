@@ -12,5 +12,6 @@ namespace HealthFinder.Models
         public short? Rating { get; set; }
         public string? Location { get; set; }
         public string? Languages { get; set; }
+        public string? Info { get; set; }
     }
 }

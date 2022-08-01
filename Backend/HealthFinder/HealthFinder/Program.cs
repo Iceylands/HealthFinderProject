@@ -16,7 +16,7 @@ builder.Services.AddCors(options =>
                           });
 });
 // Add services to the container.
-builder.Services.AddDbContext<DoctorDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MyConnection")));
+builder.Services.AddDbContext<DoctorDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ReyConnection")));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
