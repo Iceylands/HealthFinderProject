@@ -1,12 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FloatLabelType } from '@angular/material/form-field';
-interface Doctors {
+import { observable } from 'rxjs';
+import { DoctorsService } from '../doctors.service';
+import { Doctors } from '../models/Dotctors';
+
+interface DoctorsChoice {
   value: string;
   viewValue: string;
 }
-interface Language{
-  value : string;
+interface Language {
+  value: string;
   viewValue: string
 }
 @Component({
@@ -16,7 +21,7 @@ interface Language{
 })
 export class DoctorFormComponent implements OnInit {
 
-  lookingForOption: Doctors[] = [
+  lookingForOption: DoctorsChoice[] = [
     { value: 'specilist', viewValue: 'Specialist' },
     { value: 'Chiro', viewValue: 'Chiropractor' },
   ];
@@ -72,32 +77,37 @@ export class DoctorFormComponent implements OnInit {
     'Wisconsin',
     'Wyoming',
   ];
-  languages: Language[]=[
-    { value: 'eng', viewValue: 'English' },
-    { value: 'esp', viewValue: 'Spanish' },
-    { value: 'fr', viewValue: 'French' },
+  languages: Language[] = [
+    { value: 'English', viewValue: 'eng' },
+    { value: 'Spanish', viewValue: 'esp' },
+    { value: 'French', viewValue: 'fr' },
   ]
+  lookingForSelected = new FormControl()
   inuranceSelected = new FormControl('yes' as FloatLabelType);
 
   // @ts-ignore
   myForm: FormGroup;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private doctorsService: DoctorsService) {
   }
-
+  doctors!: Doctors[];
   ngOnInit() {
     this.myForm = this.fb.group({
-      lookingFor: "",
+      lookingFor: [null],
       insurance: this.inuranceSelected,
+      state: [null],
+      language: [null]
     })
     this.myForm.valueChanges.subscribe(console.log)
   }
 
-  get lookingFor() {
-    return this.myForm.get('lookingFor')
-  }
-
-  changeClient(value:any) {
+  changeClient(value: any) {
     return value;
-}
-
+  }
+  search() {
+    const doctorObservable = this.doctorsService.searchDoctors(this.myForm.value);
+    doctorObservable.subscribe((doctorData: Doctors[]) => {
+      this.doctors = doctorData;
+      console.log(this.doctors)
+    })
+  }
 }

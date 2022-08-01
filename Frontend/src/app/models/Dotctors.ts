@@ -15,4 +15,5 @@ export class Doctors {
       rating!: number;
       location!: string;
       languages!: string;
+      info!: string;
   }

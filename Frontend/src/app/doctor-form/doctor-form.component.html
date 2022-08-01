@@ -16,14 +16,20 @@
         <br />
 
         <form [formGroup]="myForm">
-          <!-- <p class="topStyle">Value: {{ myForm.value | json }}</p>
-          <br> -->
+          <p class="topStyle">Value: {{ myForm.value | json }}</p>
+          <br />
           <hr />
           <div>
-            <mat-form-field appearance="fill" >
+            <mat-form-field appearance="fill">
               <mat-label>Looking for</mat-label>
-              <mat-select  (selectionChange)="changeClient($event.value)">
-                <mat-option *ngFor="let Doctor of lookingForOption" [value]="Doctor.value">
+              <mat-select
+                (selectionChange)="changeClient($event.value)"
+                formControlName="lookingFor"
+              >
+                <mat-option
+                  *ngFor="let Doctor of lookingForOption"
+                  [value]="Doctor.viewValue"
+                >
                   {{ Doctor.viewValue }}
                 </mat-option>
               </mat-select>
@@ -31,17 +37,29 @@
             <br />
             <mat-form-field appearance="fill">
               <mat-label>State</mat-label>
-              <mat-select>
+              <mat-select
+                (selectionChange)="changeClient($event.value)"
+                formControlName="state"
+              >
                 <mat-option>None</mat-option>
-                <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                <mat-option *ngFor="let state of states" [value]="state">{{
+                  state
+                }}</mat-option>
               </mat-select>
             </mat-form-field>
             <br />
             <mat-form-field appearance="fill">
               <mat-label>Language</mat-label>
-              <mat-select>
+              <mat-select
+                (selectionChange)="changeClient($event.value)"
+                formControlName="language"
+              >
                 <mat-option>None</mat-option>
-                <mat-option *ngFor="let language of languages" [value]="language">{{language.viewValue}}</mat-option>
+                <mat-option
+                  *ngFor="let language of languages"
+                  [value]="language.value"
+                  >{{ language.value }}</mat-option
+                >
               </mat-select>
             </mat-form-field>
             <br />
@@ -55,7 +73,7 @@
             <br />
           </div>
           <br />
-          <a class="loginButton" target="" rel="noopener" href="/searching">
+          <a class="loginButton" target="" rel="noopener" (click)="search()">
             <span>Search</span>
           </a>
         </form>
