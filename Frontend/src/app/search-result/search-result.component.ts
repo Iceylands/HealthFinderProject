@@ -16,7 +16,7 @@ export class SearchResultComponent implements OnInit {
     const doctorsObservable = this.doctorsService.getDoctors();
     doctorsObservable.subscribe((doctorsData: Doctors[])=>{
       this.doctors = doctorsData;
-      console.log(this.doctors)
+      console.log("From search result",this.doctors)
     })
   }
   gotoDoctor(id:number):void{

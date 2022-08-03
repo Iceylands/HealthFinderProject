@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { FloatLabelType } from '@angular/material/form-field';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import { observable } from 'rxjs';
 import { DoctorsService } from '../doctors.service';
 import { Doctors } from '../models/Dotctors';
@@ -22,8 +24,9 @@ interface Language {
 export class DoctorFormComponent implements OnInit {
 
   lookingForOption: DoctorsChoice[] = [
-    { value: 'specilist', viewValue: 'Specialist' },
-    { value: 'Chiro', viewValue: 'Chiropractor' },
+    { value: 'fam-doc', viewValue: 'Family Doc' },
+    { value: 'gyno', viewValue: 'Gyno' },
+    { value: 'chiro', viewValue: 'Chiropractor' },
   ];
   states: string[] = [
     'Alabama',
@@ -87,7 +90,7 @@ export class DoctorFormComponent implements OnInit {
 
   // @ts-ignore
   myForm: FormGroup;
-  constructor(private fb: FormBuilder, private doctorsService: DoctorsService) {
+  constructor(private fb: FormBuilder, private doctorsService: DoctorsService, private router: Router) {
   }
   doctors!: Doctors[];
   ngOnInit() {
@@ -104,10 +107,18 @@ export class DoctorFormComponent implements OnInit {
     return value;
   }
   search() {
-    const doctorObservable = this.doctorsService.searchDoctors(this.myForm.value);
+    console.log(this.myForm.value.lookingFor + ";" + this.myForm.value.state + ";" + this.myForm.value.language)
+    const doctorObservable = this.doctorsService.searchDoctors(this.myForm.value.lookingFor + ";" + this.myForm.value.state + ";" + this.myForm.value.language);
     doctorObservable.subscribe((doctorData: Doctors[]) => {
       this.doctors = doctorData;
-      console.log(this.doctors)
+      console.log("collected docotrs", this.doctors)
+      this.router.navigate(['/doctors'])
     })
+
+  }
+
+  gotoDoctor(id:number):void{
+    console.log(id)
+    this.router.navigate(['/doctor', id])
   }
 }

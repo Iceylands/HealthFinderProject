@@ -13,7 +13,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
 } */
 
-.content {
+.contentOne {
   display: flex;
   display: flex;
   flex-flow: row wrap;
@@ -122,4 +122,75 @@ html {
   font-weight: bold;
   text-align: center;
   display: inline-block;
+}
+
+
+
+.content {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+  margin: auto;
+  padding: 100px;
+  flex-direction: row;
+  align-items: center;
+}
+.second_content {
+  display: flex;
+  padding-right: 100px;
+  padding-left: 100px;
+  flex-direction: column;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color: #3d369f;
+  color: white;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #3d369f;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
 }

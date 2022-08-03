@@ -1,5 +1,5 @@
 <app-nav-container></app-nav-container>
-<div class="content" role="main">
+<div class="contentOne" role="main" *ngIf="!doctors">
   <div class="bgimg">
     <div class="formBackground">
       <div class="rightSideForm">
@@ -16,7 +16,6 @@
         <br />
 
         <form [formGroup]="myForm">
-          <p class="topStyle">Value: {{ myForm.value | json }}</p>
           <br />
           <hr />
           <div>
@@ -83,4 +82,57 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- <app-search-result *ngIf="false" [myForm]="myForm"></app-search-result> -->
+
+<div class="content">
+  <div style="padding: 10px" *ngFor="let doctors of doctors">
+    <a (click)="gotoDoctor(doctors.id)">
+      <div class="card">
+        <img
+          src="https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+          alt="John"
+          style="width: 100%"
+        />
+        <h1>{{ doctors.name }}</h1>
+        <p class="title">{{ doctors.specialty }}</p>
+        <p>{{ doctors.rating }} Star</p>
+        <p>{{ doctors.languages }}</p>
+
+        <p>
+          <button>
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="phone"
+            ></mat-icon>
+            Contact
+          </button>
+        </p>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="second_content">
+  <h2>Recommended Doctors(From DB2)</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Specility</th>
+      <th>Rating</th>
+      <th>Languages</th>
+      <th>Information</th>
+      <th>Contact</th>
+    </tr>
+    <tr *ngFor="let doctors of doctors">
+      <td>{{ doctors.name }}</td>
+      <td>{{ doctors.specialty }}</td>
+      <td>{{ doctors.rating }} Stars</td>
+      <td>{{ doctors.languages }}</td>
+      <td>{{ doctors.info }}</td>
+      <td>000 -000- 0000</td>
+    </tr>
+    <br />
+  </table>
 </div>
