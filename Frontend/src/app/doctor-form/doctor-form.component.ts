@@ -12,6 +12,10 @@ interface DoctorsChoice {
   value: string;
   viewValue: string;
 }
+interface InsuranceChoice {
+  value: string;
+  viewValue: string;
+}
 interface Language {
   value: string;
   viewValue: string
@@ -27,6 +31,10 @@ export class DoctorFormComponent implements OnInit {
     { value: 'fam-doc', viewValue: 'Family Doc' },
     { value: 'gyno', viewValue: 'Gyno' },
     { value: 'chiro', viewValue: 'Chiropractor' },
+  ];
+  insuranceChoice: InsuranceChoice[] = [
+    { value: 'Yes', viewValue: 'Y' },
+    { value: 'No', viewValue: 'N' },
   ];
   states: string[] = [
     'Alabama',
@@ -85,8 +93,8 @@ export class DoctorFormComponent implements OnInit {
     { value: 'Spanish', viewValue: 'esp' },
     { value: 'French', viewValue: 'fr' },
   ]
-  lookingForSelected = new FormControl()
-  inuranceSelected = new FormControl('yes' as FloatLabelType);
+  // lookingForSelected = new FormControl()
+  // inuranceSelected = new FormControl('yes' as FloatLabelType);
 
   // @ts-ignore
   myForm: FormGroup;
@@ -96,7 +104,7 @@ export class DoctorFormComponent implements OnInit {
   ngOnInit() {
     this.myForm = this.fb.group({
       lookingFor: [null],
-      insurance: this.inuranceSelected,
+      inuranceSelected: [null],
       state: [null],
       language: [null]
     })
@@ -112,7 +120,7 @@ export class DoctorFormComponent implements OnInit {
     doctorObservable.subscribe((doctorData: Doctors[]) => {
       this.doctors = doctorData;
       console.log("collected docotrs", this.doctors)
-      this.router.navigate(['/doctors'])
+      this.router.navigate(['/results'])
     })
 
   }

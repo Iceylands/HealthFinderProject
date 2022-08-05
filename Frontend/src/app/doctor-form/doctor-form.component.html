@@ -1,120 +1,96 @@
 <app-nav-container></app-nav-container>
-<div class="contentOne" role="main" *ngIf="!doctors">
-  <div class="bgimg">
-    <div class="formBackground">
-      <div class="rightSideForm">
-        <h1>Fill the form</h1>
-        <ul class="oval">
-          <li>Fill the form</li>
-          <li>You can leave some options blank</li>
-          <li>We will match you to a dcotor</li>
-        </ul>
-      </div>
 
-      <div class="leftSideForm">
+<div class="contentOne" role="main">
+  <div class="formBackground">
+    <div class="leftSideForm">
+      <br />
+      <br />
+      <form [formGroup]="myForm">
         <br />
-        <br />
-
-        <form [formGroup]="myForm">
+        <div>
+          <mat-form-field appearance="fill">
+            <mat-label>Looking for</mat-label>
+            <mat-select
+              (selectionChange)="changeClient($event.value)"
+              formControlName="lookingFor"
+            >
+              <mat-option
+                *ngFor="let Doctor of lookingForOption"
+                [value]="Doctor.viewValue"
+              >
+                {{ Doctor.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
           <br />
-          <hr />
+          <mat-form-field appearance="fill">
+            <mat-label>State</mat-label>
+            <mat-select
+              (selectionChange)="changeClient($event.value)"
+              formControlName="state"
+            >
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let state of states" [value]="state">{{
+                state
+              }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br />
+          <mat-form-field appearance="fill">
+            <mat-label>Language</mat-label>
+            <mat-select
+              (selectionChange)="changeClient($event.value)"
+              formControlName="language"
+            >
+              <mat-option>None</mat-option>
+              <mat-option
+                *ngFor="let language of languages"
+                [value]="language.value"
+                >{{ language.value }}</mat-option
+              >
+            </mat-select>
+          </mat-form-field>
+          <br />
           <div>
             <mat-form-field appearance="fill">
-              <mat-label>Looking for</mat-label>
+              <mat-label>Insurance</mat-label>
               <mat-select
                 (selectionChange)="changeClient($event.value)"
-                formControlName="lookingFor"
-              >
-                <mat-option
-                  *ngFor="let Doctor of lookingForOption"
-                  [value]="Doctor.viewValue"
-                >
-                  {{ Doctor.viewValue }}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-            <br />
-            <mat-form-field appearance="fill">
-              <mat-label>State</mat-label>
-              <mat-select
-                (selectionChange)="changeClient($event.value)"
-                formControlName="state"
-              >
-                <mat-option>None</mat-option>
-                <mat-option *ngFor="let state of states" [value]="state">{{
-                  state
-                }}</mat-option>
-              </mat-select>
-            </mat-form-field>
-            <br />
-            <mat-form-field appearance="fill">
-              <mat-label>Language</mat-label>
-              <mat-select
-                (selectionChange)="changeClient($event.value)"
-                formControlName="language"
+                formControlName="inuranceSelected"
               >
                 <mat-option>None</mat-option>
                 <mat-option
-                  *ngFor="let language of languages"
-                  [value]="language.value"
-                  >{{ language.value }}</mat-option
+                  *ngFor="let ins of insuranceChoice"
+                  [value]="ins.value"
+                  >{{ ins.value }}</mat-option
                 >
               </mat-select>
             </mat-form-field>
-            <br />
-            <div>
-              <label>Have insurance? </label>
-              <mat-radio-group [formControl]="inuranceSelected">
-                <mat-radio-button value="yes">Yes</mat-radio-button>
-                <mat-radio-button value="no">No</mat-radio-button>
-              </mat-radio-group>
-            </div>
-            <br />
           </div>
           <br />
-          <a class="loginButton" target="" rel="noopener" (click)="search()">
-            <span>Search</span>
-          </a>
-        </form>
+        </div>
         <br />
-        <br />
-        <br />
-      </div>
+
+        <a
+          style="cursor: pointer"
+          class="searchBtn"
+          target=""
+          rel="noopener"
+          (click)="search()"
+        >
+          <span>Search</span>
+        </a>
+      </form>
+      <br />
+      <br />
+      <br />
     </div>
   </div>
 </div>
 
 <!-- <app-search-result *ngIf="false" [myForm]="myForm"></app-search-result> -->
 
-<div class="content">
-  <div style="padding: 10px" *ngFor="let doctors of doctors">
-    <a (click)="gotoDoctor(doctors.id)">
-      <div class="card">
-        <img
-          src="https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt="John"
-          style="width: 100%"
-        />
-        <h1>{{ doctors.name }}</h1>
-        <p class="title">{{ doctors.specialty }}</p>
-        <p>{{ doctors.rating }} Star</p>
-        <p>{{ doctors.languages }}</p>
-
-        <p>
-          <button>
-            <mat-icon
-              aria-hidden="false"
-              aria-label="Example home icon"
-              fontIcon="phone"
-            ></mat-icon>
-            Contact
-          </button>
-        </p>
-      </div>
-    </a>
-  </div>
-</div>
-<div class="second_content">
+<!-- <div class="second_content">
   <h2>Recommended Doctors(From DB2)</h2>
   <table>
     <tr>
@@ -135,4 +111,4 @@
     </tr>
     <br />
   </table>
-</div>
+</div> -->

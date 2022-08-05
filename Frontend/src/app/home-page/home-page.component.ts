@@ -10,6 +10,10 @@ export class HomePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+  gotoId(){
+    console.log("Hi")
+  }
 }

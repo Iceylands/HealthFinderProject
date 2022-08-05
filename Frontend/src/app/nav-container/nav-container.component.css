@@ -1,114 +1,15 @@
-.toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  background-color: #f4faff;
-  color: #3d369f;
-  z-index: 1;
-}
-
-.toolbar img {
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo {
-  height: 40px;
-  margin: 0 8px;
-}
-
-.toolbar #youtube-logo {
-  height: 40px;
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover,
-.toolbar #youtube-logo:hover {
-  opacity: 0.8;
-}
-
-.spacer {
-  flex: 1;
-}
-
-li a:hover:not(.active) {
-  background-color: #3d369f;
-  color: #fff;
-}
-
-.loginButton {
-  all: unset;
-  border-radius: 50px;
-  border: 1px solid #eee;
-  background-color: #3d369f;
-  color: #fff;
-  height: 20px;
-  width: 200px;
-  margin: 16px 8px 16px;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-  line-height: 24px;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: #3d369f;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #3d369f;
-  color: #fff;
+.navbar-dark{
+  background-color:  #09f !important;
+  color:#fff !important ;
 }
 
 
-
-a,
-a:hover {
-  color: #1976d2;
-  text-decoration: none;
-}
-a{
-  display: flex;
-}
-a:hover {
-  color: #125699;
+.btn-outline-success{
+background-color: #fff;
+color: #09f;
+margin: 20px;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  /* background-color: #333; */
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: #3d369f;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #3d369f;
-  color: #fff;
+.btn-outline-success:hover{
+  color: #09f;
 }

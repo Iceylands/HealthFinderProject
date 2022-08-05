@@ -1,34 +1,27 @@
 <app-nav-container></app-nav-container>
-<!-- <h2 style="margin-top: 100px;margin-bottom: 0px; padding-left: 100px;">Our recoomendation</h2> -->
- <div class="content">
-
-  <div style="padding: 10px" *ngFor="let doctors of doctors">
-    <a (click)="gotoDoctor(doctors.id)">
-      <div class="card">
-        <img
-        src="https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        alt="John"
-        style="width: 100%"
-        />
-        <h1>{{ doctors.name }}</h1>
-        <p class="title">{{ doctors.specialty }}</p>
-        <p>{{ doctors.rating }} Star</p>
-        <p>{{ doctors.languages }}</p>
-
-        <p>
-          <button>
-            <mat-icon
-            aria-hidden="false"
-            aria-label="Example home icon"
-            fontIcon="phone"
-            ></mat-icon>
-            Contact
-          </button>
-        </p>
-      </div>
-    </a>
+<h2 style="margin-top: 70px;  padding-left: 100px">
+  Our recomendation
+</h2>
+<div class="content">
+  <div class="card" style="width: 400px" *ngFor="let doctors of doctors">
+    <img
+      class="card-img-top"
+      src="https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      alt="Card image"
+      style="width: 100%"
+    />
+    <div class="card-body">
+      <h1 class="card-title">{{ doctors.name }}</h1>
+      <p class="card-text">
+        {{ doctors.info.split(" ").slice(0, 5).join(" ") }} ...
+      </p>
+      <a (click)="gotoDoctor(doctors.id)" class="btn btn-primary"
+        >See Profile</a
+      >
     </div>
   </div>
+  <br />
+</div>
 <div class="second_content">
   <h2>Recommended Doctors(From DB2)</h2>
   <table>

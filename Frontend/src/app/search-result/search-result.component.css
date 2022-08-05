@@ -30,7 +30,7 @@ tr:nth-child(even) {
 }
 
 th {
-  background-color: #3d369f;
+  background-color: #09f;
   color: white;
 }
 
@@ -54,7 +54,7 @@ button {
   display: inline-block;
   padding: 8px;
   color: white;
-  background-color: #3d369f;
+  background-color: #09f;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -66,3 +66,19 @@ a {
   font-size: 22px;
   color: black;
 }
+
+  .btn {
+    font-size: 20px;
+    color: #fff;
+    height: 50px;
+    width: 200px;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+  }
+
+  .btn:hover{
+    background-color: #09f;
+    color: #fff;
+  }
