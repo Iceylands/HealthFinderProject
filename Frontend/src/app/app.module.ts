@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DoctorFormComponent } from './doctor-form/doctor-form.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginComponent } from './login/login.component';
-import { AboutUsComponent } from './about-us/about-us.component';
 import { NavContainerComponent } from './nav-container/nav-container.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -31,7 +30,6 @@ import { AddDoctorsComponent } from './add-doctors/add-doctors.component';
     DoctorFormComponent,
     HomePageComponent,
     LoginComponent,
-    AboutUsComponent,
     NavContainerComponent,
     SearchResultComponent,
     DoctorsDetailsComponent,

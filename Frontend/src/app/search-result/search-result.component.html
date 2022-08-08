@@ -1,27 +1,31 @@
 <app-nav-container></app-nav-container>
+
 <h2 style="margin-top: 70px;  padding-left: 100px">
   Our recomendation
 </h2>
+
+  <!-- <a type="submit" class="btn btn-primary"  (click)="seeResult()">See result</a> -->
 <div class="content">
-  <div class="card" style="width: 400px" *ngFor="let doctors of doctors">
+  <div class="card" *ngFor="let doctors of doctors">
     <img
       class="card-img-top"
-      src="https://images.pexels.com/photos/3985163/pexels-photo-3985163.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      src="https://images.pexels.com/photos/6749778/pexels-photo-6749778.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
       alt="Card image"
       style="width: 100%"
     />
     <div class="card-body">
-      <h1 class="card-title">{{ doctors.name }}</h1>
+      <h1 class="card-title">{{ doctors.name }}</h1><p class="card-text">
+        {{ doctors.specialty }}
+      </p>
       <p class="card-text">
         {{ doctors.info.split(" ").slice(0, 5).join(" ") }} ...
       </p>
+
       <a (click)="gotoDoctor(doctors.id)" class="btn btn-primary"
         >See Profile</a
       >
     </div>
   </div>
-  <br />
-</div>
 <div class="second_content">
   <h2>Recommended Doctors(From DB2)</h2>
   <table>
@@ -31,7 +35,6 @@
       <th>Rating</th>
       <th>Languages</th>
       <th>Information</th>
-      <th>Contact</th>
     </tr>
     <tr *ngFor="let doctors of doctors">
       <td>{{ doctors.name }}</td>
@@ -39,7 +42,6 @@
       <td>{{ doctors.rating }} Stars</td>
       <td>{{ doctors.languages }}</td>
       <td>{{ doctors.info }}</td>
-      <td>000 -000- 0000</td>
     </tr>
     <br />
   </table>

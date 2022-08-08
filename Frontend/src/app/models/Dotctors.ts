@@ -17,3 +17,13 @@ export class Doctors {
       languages!: string;
       info!: string;
   }
+
+
+  export class PostDoctors {
+    name!: string;
+    specialty!: string;
+    rating!: number;
+    location!: string;
+    languages!: string;
+    info!: string;
+}

@@ -1,25 +1,69 @@
-
-
+<app-nav-container></app-nav-container>
 <div class="container-fluid">
-
-  <form action="/">
+  <h2 style="margin-top: 24px; color:black">Add doctors</h2>
+  <form (ngSubmit)="search()" [formGroup]="myForm">
     <div class="mb-3 mt-3">
       <label for="text" class="form-label">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+      <input
+      id="name"
+        type="text"
+        class="form-control"
+        placeholder="Enter Name"
+        formControlName="Name"
+      />
     </div>
     <div class="mb-3 mt-3">
       <label for="text" class="form-label">Specialisation</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter Specialisation" name="name">
+      <input
+      id="Specialisation"
+        type="text"
+        class="form-control"
+        placeholder="Enter Specialisation"
+        formControlName="Specialisation"
+      />
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="text" class="form-label">Rating</label>
+      <input
+      id="Rating"
+        type="number"
+        class="form-control"
+        placeholder="Enter rating"
+        formControlName="Rating"
+      />
     </div>
     <div class="mb-3 mt-3">
       <label for="text" class="form-label">State</label>
-      <input type="text" class="form-control" id="name" placeholder="Enter State" name="name">
+      <input
+      id="State"
+        type="text"
+        class="form-control"
+        placeholder="Enter State"
+        formControlName="State"
+      />
     </div>
     <div class="mb-3 mt-3">
-      <label for="text" class="form-label">Language</label>
-      <input type="text" class="form-control" id="language" placeholder="Enter Language" name="name">
+      <label for="text" class="form-label">Language(s)</label>
+      <input
+      id="Language"
+        type="text"
+        class="form-control"
+        placeholder="Enter Language seprated by comma"
+        formControlName="Language"
+      />
+    </div>
+
+    <div class="mb-3 mt-3">
+      <label for="text" class="form-label">Info</label>
+      <textarea
+      id="Info"
+        type="text"
+        class="form-control"
+        placeholder="Enter Language"
+        formControlName="Info"
+        aria-label="With textarea"
+      ></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-
 </div>
